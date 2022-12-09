@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Car : MonoBehaviour
 {
@@ -14,6 +15,14 @@ public class Car : MonoBehaviour
   void Update()
   {
     Move();
+  }
+
+  void OnTriggerEnter(Collider other)
+  {
+    if (other.CompareTag("Obstacle"))
+    {
+      SceneManager.LoadScene("MainMenu");
+    }
   }
 
   void Move()
