@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
   [SerializeField]
   TMP_Text energyText;
   [SerializeField]
+  AndroidNotificationHandler androidNotificationHandler;
+  [SerializeField]
   int maxEnergy;
   [SerializeField]
   int energyRechageDuration;
@@ -46,8 +48,11 @@ public class MainMenu : MonoBehaviour
     PlayerPrefs.SetInt(EnergyKey, energy);
     if (energy == 0)
     {
-      DateTime oneMinute = DateTime.Now.AddMinutes(energyRechageDuration);
-      PlayerPrefs.SetString(EnergyReadyKey, oneMinute.ToString());
+      DateTime energyReady = DateTime.Now.AddMinutes(energyRechageDuration);
+      PlayerPrefs.SetString(EnergyReadyKey, energyReady.ToString());
+#if UNITY_ANDROID
+      androidNotificationHandler.ScheduleNotification(energyReady);
+#endif
     }
     SceneManager.LoadScene("Game");
   }
