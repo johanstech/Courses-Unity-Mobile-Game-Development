@@ -8,6 +8,7 @@ public class AndroidNotificationHandler : MonoBehaviour
 {
 #if UNITY_ANDROID
   const string ChannelId = "notification_channel";
+
   public void ScheduleNotification(DateTime dateTime)
   {
     AndroidNotificationChannel notificationChannel = new AndroidNotificationChannel
@@ -23,7 +24,7 @@ public class AndroidNotificationHandler : MonoBehaviour
     AndroidNotification notification = new AndroidNotification
     {
       Title = "Energy Recharged!",
-      Text = "Your energy has recharged, come back to play again!",
+      Text = "Your energy has been recharged, come back to play again!",
       SmallIcon = "default",
       LargeIcon = "default",
       FireTime = dateTime
