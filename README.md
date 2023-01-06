@@ -16,7 +16,8 @@ Code along for the Udemy course [Unity C# Game Development](https://www.udemy.co
 
 ## :rocket: Projects
 
-|  #  |                                                    Project                                                     |
-| :-: | :------------------------------------------------------------------------------------------------------------: |
-| 01  | [Ball Launcher](https://github.com/johanstech/Courses-Unity-Mobile-Game-Development/tree/master/BallLauncher/) |
-| 01  | [Simple Driving](https://github.com/johanstech/Courses-Unity-Mobile-Game-Development/tree/master/SimpleDriving/) |
+|  #  |                                                       Project                                                        |
+| :-: | :------------------------------------------------------------------------------------------------------------------: |
+| 01  |    [Ball Launcher](https://github.com/johanstech/Courses-Unity-Mobile-Game-Development/tree/master/BallLauncher/)    |
+| 02  |   [Simple Driving](https://github.com/johanstech/Courses-Unity-Mobile-Game-Development/tree/master/SimpleDriving/)   |
+| 03  | [Asteroid Avoider](https://github.com/johanstech/Courses-Unity-Mobile-Game-Development/tree/master/AsteroidAvoider/) |
