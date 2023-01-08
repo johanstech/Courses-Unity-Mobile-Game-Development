@@ -20,7 +20,8 @@ public class PlayerMovement : MonoBehaviour
 
   void Update()
   {
-    Move();
+    ProcessInput();
+    KeepPlayerOnScreen();
   }
 
   void FixedUpdate()
@@ -31,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     _rigidBody.velocity = Vector3.ClampMagnitude(_rigidBody.velocity, maxVelocity);
   }
 
-  void Move()
+  void ProcessInput()
   {
     if (!Touchscreen.current.primaryTouch.press.isPressed)
     {
@@ -44,5 +45,30 @@ public class PlayerMovement : MonoBehaviour
     moveDirection = transform.position - worldPosition;
     moveDirection.z = 0;
     moveDirection.Normalize();
+  }
+
+  void KeepPlayerOnScreen()
+  {
+    Vector3 newPosition = transform.position;
+    Vector3 viewportPosition = _mainCamera.WorldToViewportPoint(newPosition);
+
+    if (viewportPosition.x > 1)
+    {
+      newPosition.x = -newPosition.x + 0.1f;
+    }
+    else if (viewportPosition.x < 0)
+    {
+      newPosition.x = -newPosition.x - 0.1f;
+    }
+    else if (viewportPosition.y > 1)
+    {
+      newPosition.y = -newPosition.y + 0.1f;
+    }
+    else if (viewportPosition.y < 0)
+    {
+      newPosition.y = -newPosition.y - 0.1f;
+    }
+
+    transform.position = newPosition;
   }
 }
