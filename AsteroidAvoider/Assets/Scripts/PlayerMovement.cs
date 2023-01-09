@@ -7,14 +7,16 @@ public class PlayerMovement : MonoBehaviour
   float forceMagnitude;
   [SerializeField]
   float maxVelocity;
+  [SerializeField]
+  float rotationSpeed;
 
-  Rigidbody _rigidBody;
+  Rigidbody _rb;
   Camera _mainCamera;
   Vector3 moveDirection;
 
   void Start()
   {
-    _rigidBody = GetComponent<Rigidbody>();
+    _rb = GetComponent<Rigidbody>();
     _mainCamera = Camera.main;
   }
 
@@ -22,14 +24,15 @@ public class PlayerMovement : MonoBehaviour
   {
     ProcessInput();
     KeepPlayerOnScreen();
+    RotateToFaceVelocity();
   }
 
   void FixedUpdate()
   {
     if (moveDirection == Vector3.zero) return;
 
-    _rigidBody.AddForce(moveDirection * forceMagnitude, ForceMode.Force);
-    _rigidBody.velocity = Vector3.ClampMagnitude(_rigidBody.velocity, maxVelocity);
+    _rb.AddForce(moveDirection * forceMagnitude, ForceMode.Force);
+    _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxVelocity);
   }
 
   void ProcessInput()
@@ -70,5 +73,13 @@ public class PlayerMovement : MonoBehaviour
     }
 
     transform.position = newPosition;
+  }
+
+  void RotateToFaceVelocity()
+  {
+    if (_rb.velocity == Vector3.zero) return;
+
+    Quaternion targetRotation = Quaternion.LookRotation(_rb.velocity, Vector3.back);
+    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
   }
 }

@@ -449,6 +449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da486a8ad6a3844e93600c54abf73af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forceMagnitude: 50
+  maxVelocity: 6
+  rotationSpeed: 5
 --- !u!4 &653215791
 Transform:
   m_ObjectHideFlags: 0
