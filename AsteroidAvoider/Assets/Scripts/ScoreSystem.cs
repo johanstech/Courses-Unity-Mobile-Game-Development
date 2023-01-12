@@ -29,6 +29,5 @@ public class ScoreSystem : MonoBehaviour
   public void StartTimer()
   {
     _updateScore = true;
-    scoreText.text = Mathf.FloorToInt(_score).ToString();
   }
 }

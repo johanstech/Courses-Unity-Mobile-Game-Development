@@ -1149,6 +1149,8 @@ MonoBehaviour:
   gameOverDisplay: {fileID: 1449544043}
   scoreSystem: {fileID: 700948020}
   asteroidSpawner: {fileID: 381712870}
+  player: {fileID: 653215789}
+  continueButton: {fileID: 2145618326}
 --- !u!1 &894969781
 GameObject:
   m_ObjectHideFlags: 0
@@ -6978,7 +6980,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 893077153}
         m_TargetAssemblyTypeName: GameOverHandler, Assembly-CSharp
-        m_MethodName: Continue
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
