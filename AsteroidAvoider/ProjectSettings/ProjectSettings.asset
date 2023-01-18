@@ -852,7 +852,8 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
-    Purchasing: 0
+    Legacy Analytics: 1
+    Purchasing: 1
     UDP: 0
     Unity Ads: 1
   luminIcon:
@@ -872,7 +873,7 @@ PlayerSettings:
   cloudProjectId: 971524f0-9b46-4838-895b-6fef78eceab1
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: AsteroidAvoider (3)
+  projectName: AsteroidAvoider - Ads and IAP
   organizationId: johanstech
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

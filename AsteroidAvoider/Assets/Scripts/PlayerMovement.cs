@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
   float maxVelocity;
   [SerializeField]
   float rotationSpeed;
+  [SerializeField]
+  Material newShipMaterial;
 
   Rigidbody _rb;
   Camera _mainCamera;
@@ -18,6 +20,10 @@ public class PlayerMovement : MonoBehaviour
   {
     _rb = GetComponent<Rigidbody>();
     _mainCamera = Camera.main;
+    if (PlayerPrefs.GetInt(StoreManager.NewShipUnlockedKey, 0) == 1)
+    {
+      GetComponentInChildren<MeshRenderer>().material = newShipMaterial;
+    }
   }
 
   void Update()

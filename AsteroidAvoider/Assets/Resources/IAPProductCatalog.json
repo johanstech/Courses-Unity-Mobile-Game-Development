@@ -1,0 +1,25 @@
+{
+  "appleSKU": "",
+  "appleTeamID": "",
+  "enableCodelessAutoInitialization": false,
+  "enableUnityGamingServicesAutoInitialization": true,
+  "products": [
+    {
+      "id": "com.johanstech.asteroidavoider.newship",
+      "type": 1,
+      "storeIDs": [],
+      "defaultDescription": {
+        "googleLocale": 4,
+        "title": "New Ship",
+        "description": "Unlock a new starship"
+      },
+      "screenshotPath": "",
+      "applePriceTier": 2,
+      "googlePrice": { "data": [199, 0, 0, 131072], "num": 1.99 },
+      "pricingTemplateID": "",
+      "descriptions": [],
+      "udpPrice": { "data": [0, 0, 0, 0], "num": 0.0 },
+      "payouts": []
+    }
+  ]
+}
